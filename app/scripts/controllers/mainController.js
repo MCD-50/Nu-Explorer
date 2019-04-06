@@ -2,11 +2,13 @@ angular.module('ethExplorer')
     .controller('mainCtrl', function ($rootScope, $scope, $location) {
 
 	var web3 = $rootScope.web3;
-	var maxBlocks = 50; // TODO: into setting file or user select
+	var maxBlocks = 5; // TODO: into setting file or user select
 	var blockNum = $scope.blockNum = parseInt(web3.eth.blockNumber, 10);
-	if (maxBlocks > blockNum) {
+  
+  
+  if (maxBlocks > blockNum) {
 	    maxBlocks = blockNum + 1;
-	}
+  }
 
 	// get latest 50 blocks
 	$scope.blocks = [];
